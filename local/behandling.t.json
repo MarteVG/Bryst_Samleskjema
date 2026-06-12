@@ -1,0 +1,2588 @@
+{
+  "@type" : "TEMPLATE",
+  "uid" : "bacf0ee9-84fe-4954-813e-66746126edc8",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "name" : "John Tore Valand",
+      "organisation" : "Helse Vest IKT AS",
+      "email" : "john.tore.valand@helse-vest-ikt.no",
+      "date" : "2026-06-12"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "unmanaged"
+    },
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : { },
+    "otherDetails" : {
+      "licence" : "",
+      "custodian_organisation" : "",
+      "original_namespace" : "",
+      "original_publisher" : "",
+      "custodian_namespace" : "",
+      "sem_ver" : "0.1.0",
+      "build_uid" : "",
+      "PARENT:MD5-CAM-1.0.1" : "6562F732112B8B3F94790E178F4243A5",
+      "MD5-CAM-1.0.1" : "1d5c84abea6c25cca9fd96060e86ef18"
+    },
+    "details" : {
+      "es-ar" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "es-ar"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "nb" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "nb"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "ko" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ko"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "ar-sy" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ar-sy"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-COMPOSITION.encounter.v1",
+  "differential" : false,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-COMPOSITION.t_encounter.v1"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "COMPOSITION",
+    "occurrences" : "1..1",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "category",
+      "existence" : "1..1",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "DV_CODED_TEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "defining_code",
+          "existence" : "1..1",
+          "children" : [ {
+            "@type" : "C_TERMINOLOGY_CODE",
+            "rmTypeName" : "CODE_PHRASE",
+            "occurrences" : "1..1",
+            "terminologyId" : {
+              "value" : "openehr"
+            },
+            "constraint" : [ "433" ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "context",
+      "existence" : "0..1",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "EVENT_CONTEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "other_context",
+          "existence" : "0..1",
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "ITEM_TREE",
+            "occurrences" : "1..1",
+            "nodeId" : "at0001",
+            "attributes" : [ {
+              "@type" : "C_ATTRIBUTE",
+              "rmAttributeName" : "items",
+              "existence" : "0..1",
+              "cardinality" : {
+                "@type" : "CARDINALITY",
+                "interval" : "0..*",
+                "ordered" : false,
+                "unique" : false
+              },
+              "children" : [ {
+                "@type" : "ARCHETYPE_SLOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..*",
+                "nodeId" : "at0002",
+                "includes" : [ {
+                  "@type" : "ASSERTION",
+                  "stringExpression" : "archetype_id/value matches {/.*/}",
+                  "expression" : {
+                    "@type" : "BINARY_OPERATOR",
+                    "type" : "BOOLEAN",
+                    "operator" : "matches",
+                    "leftOperand" : {
+                      "@type" : "MODEL_REFERENCE",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Attribute",
+                      "path" : "archetype_id/value"
+                    },
+                    "rightOperand" : {
+                      "@type" : "CONSTRAINT",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Constraint",
+                      "item" : {
+                        "@type" : "C_STRING",
+                        "constraint" : [ "/.*/" ]
+                      }
+                    },
+                    "precedenceOverriden" : false
+                  },
+                  "variables" : [ ]
+                } ],
+                "excludes" : [ ],
+                "closed" : false
+              } ]
+            } ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "content",
+      "existence" : "0..1",
+      "cardinality" : {
+        "@type" : "CARDINALITY",
+        "interval" : "1..*",
+        "ordered" : false,
+        "unique" : false
+      },
+      "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.2",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-management_screening-001.v2",
+        "referenceType" : "archetypeOverlay"
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "ar-sy" : {
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "*Tree(en)",
+          "description" : "*@ internal @(en)"
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*Extension(en)",
+          "description" : "*Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "behandling",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        }
+      },
+      "es-ar" : {
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "*Tree(en)",
+          "description" : "*@ internal @(en)"
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*Extension(en)",
+          "description" : "*Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "behandling",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        }
+      },
+      "en" : {
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Tree",
+          "description" : "@ internal @"
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "Extension",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.",
+          "comment" : "e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents."
+        },
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "behandling",
+          "description" : "Interaction, contact or care event between a subject of care and healthcare provider(s)."
+        }
+      },
+      "ko" : {
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "*Tree(en)",
+          "description" : "*@ internal @(en)"
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "*Extension(en)",
+          "description" : "*Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "behandling",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        }
+      },
+      "nb" : {
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Tree",
+          "description" : "@ internal @"
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "Utvidelse",
+          "description" : "Tilleggsinformasjon som kan være nødvendig for å dokumentere lokal kontekst, eller for å tilpasse til andre referansemodeller/formalismer.",
+          "comment" : "F.eks. lokal avdelingsinformasjon eller ytterligere metadata for tilpasning til FHIR eller CIMI."
+        },
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "behandling",
+          "description" : "Interaksjon, kontakt eller omsorgshendelse mellom et individ og helsepersonell."
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "buildUid" : "ed2cc0eb-c508-3e66-a7bc-0e3f3e3f196f",
+  "rmName" : "openehr",
+  "rmRelease" : "1.1.0",
+  "generated" : true,
+  "templateId" : "behandling",
+  "otherMetaData" : { },
+  "templateOverlays" : [ {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "ab0a11dd-529c-42cd-874d-92a20cf661e2",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "182A23C49E45E1C560537841A1D0EA4B"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.management_screening.v2",
+    "differential" : false,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-management_screening-001.v2"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "occurrences" : "1..1",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "existence" : "1..1",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "occurrences" : "1..1",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "existence" : "0..1",
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "0..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "POINT_EVENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0002.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "existence" : "1..1",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "occurrences" : "1..1",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "existence" : "0..1",
+                    "cardinality" : {
+                      "@type" : "CARDINALITY",
+                      "interval" : "0..*",
+                      "ordered" : false,
+                      "unique" : false
+                    },
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0034",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "existence" : "0..1",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..*",
+                      "nodeId" : "at0039.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "existence" : "0..1",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_CODED_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "defining_code",
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "rmTypeName" : "TERMINOLOGY_CODE",
+                              "occurrences" : "1..1",
+                              "terminologyId" : {
+                                "value" : "local"
+                              },
+                              "constraint" : [ "ac0.4" ],
+                              "selectedTerminologies" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0044.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "existence" : "0..1",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0022.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "items",
+                        "existence" : "1..1",
+                        "cardinality" : {
+                          "@type" : "CARDINALITY",
+                          "interval" : "1..*",
+                          "ordered" : false,
+                          "unique" : false
+                        },
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "1..1",
+                          "nodeId" : "at0004.1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "children" : [ {
+                                  "@type" : "C_STRING",
+                                  "rmTypeName" : "STRING",
+                                  "constraint" : [ "Ingen videre behandling grunnet komorbidet" ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0005.1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_BOOLEAN",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0037.1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DATE_TIME",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_DATE_TIME>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DURATION",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_DURATION>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "ARCHETYPE_SLOT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..*",
+                          "nodeId" : "at0036",
+                          "includes" : [ {
+                            "@type" : "ASSERTION",
+                            "stringExpression" : "archetype_id/value matches {/openEHR-EHR-CLUSTER\\.organisation\\.v1/}",
+                            "expression" : {
+                              "@type" : "BINARY_OPERATOR",
+                              "type" : "BOOLEAN",
+                              "operator" : "matches",
+                              "leftOperand" : {
+                                "@type" : "MODEL_REFERENCE",
+                                "type" : "STRING",
+                                "precedenceOverriden" : false,
+                                "referenceType" : "Attribute",
+                                "path" : "archetype_id/value"
+                              },
+                              "rightOperand" : {
+                                "@type" : "CONSTRAINT",
+                                "type" : "STRING",
+                                "precedenceOverriden" : false,
+                                "referenceType" : "Constraint",
+                                "item" : {
+                                  "@type" : "C_STRING",
+                                  "constraint" : [ "/openEHR-EHR-CLUSTER\\.organisation\\.v1/" ]
+                                }
+                              },
+                              "precedenceOverriden" : false
+                            },
+                            "variables" : [ ]
+                          } ],
+                          "excludes" : [ ],
+                          "closed" : false
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0035.1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0022.2",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "items",
+                        "existence" : "1..1",
+                        "cardinality" : {
+                          "@type" : "CARDINALITY",
+                          "interval" : "1..*",
+                          "ordered" : false,
+                          "unique" : false
+                        },
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "1..1",
+                          "nodeId" : "at0004.2",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "children" : [ {
+                                  "@type" : "C_STRING",
+                                  "rmTypeName" : "STRING",
+                                  "constraint" : [ "Ingen videre behandling grunnet alder" ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0005.2",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_BOOLEAN",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0037.3",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DATE_TIME",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_DATE_TIME>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DURATION",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_DURATION>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "ARCHETYPE_SLOT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..*",
+                          "nodeId" : "at0036",
+                          "includes" : [ {
+                            "@type" : "ASSERTION",
+                            "stringExpression" : "archetype_id/value matches {/openEHR-EHR-CLUSTER\\.organisation\\.v1/}",
+                            "expression" : {
+                              "@type" : "BINARY_OPERATOR",
+                              "type" : "BOOLEAN",
+                              "operator" : "matches",
+                              "leftOperand" : {
+                                "@type" : "MODEL_REFERENCE",
+                                "type" : "STRING",
+                                "precedenceOverriden" : false,
+                                "referenceType" : "Attribute",
+                                "path" : "archetype_id/value"
+                              },
+                              "rightOperand" : {
+                                "@type" : "CONSTRAINT",
+                                "type" : "STRING",
+                                "precedenceOverriden" : false,
+                                "referenceType" : "Constraint",
+                                "item" : {
+                                  "@type" : "C_STRING",
+                                  "constraint" : [ "/openEHR-EHR-CLUSTER\\.organisation\\.v1/" ]
+                                }
+                              },
+                              "precedenceOverriden" : false
+                            },
+                            "variables" : [ ]
+                          } ],
+                          "excludes" : [ ],
+                          "closed" : false
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0035",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0022.3",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "items",
+                        "existence" : "1..1",
+                        "cardinality" : {
+                          "@type" : "CARDINALITY",
+                          "interval" : "1..*",
+                          "ordered" : false,
+                          "unique" : false
+                        },
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "1..1",
+                          "nodeId" : "at0004.3",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "children" : [ {
+                                  "@type" : "C_STRING",
+                                  "rmTypeName" : "STRING",
+                                  "constraint" : [ "Ingen videre behandling grunnet pasientens eget ønske" ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0005.3",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_BOOLEAN",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0037.2",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DATE_TIME",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_DATE_TIME>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DURATION",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_DURATION>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "ARCHETYPE_SLOT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..*",
+                          "nodeId" : "at0036",
+                          "includes" : [ {
+                            "@type" : "ASSERTION",
+                            "stringExpression" : "archetype_id/value matches {/openEHR-EHR-CLUSTER\\.organisation\\.v1/}",
+                            "expression" : {
+                              "@type" : "BINARY_OPERATOR",
+                              "type" : "BOOLEAN",
+                              "operator" : "matches",
+                              "leftOperand" : {
+                                "@type" : "MODEL_REFERENCE",
+                                "type" : "STRING",
+                                "precedenceOverriden" : false,
+                                "referenceType" : "Attribute",
+                                "path" : "archetype_id/value"
+                              },
+                              "rightOperand" : {
+                                "@type" : "CONSTRAINT",
+                                "type" : "STRING",
+                                "precedenceOverriden" : false,
+                                "referenceType" : "Constraint",
+                                "item" : {
+                                  "@type" : "C_STRING",
+                                  "constraint" : [ "/openEHR-EHR-CLUSTER\\.organisation\\.v1/" ]
+                                }
+                              },
+                              "precedenceOverriden" : false
+                            },
+                            "variables" : [ ]
+                          } ],
+                          "excludes" : [ ],
+                          "closed" : false
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0035.2",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..1",
+                      "nodeId" : "at0022.4",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "items",
+                        "existence" : "1..1",
+                        "cardinality" : {
+                          "@type" : "CARDINALITY",
+                          "interval" : "1..*",
+                          "ordered" : false,
+                          "unique" : false
+                        },
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "1..1",
+                          "nodeId" : "at0004.4",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "children" : [ {
+                                  "@type" : "C_STRING",
+                                  "rmTypeName" : "STRING",
+                                  "constraint" : [ "Annen årsak" ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0005.4",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_BOOLEAN",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0037.4",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DATE_TIME",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_DATE_TIME>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DURATION",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_DURATION>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "ARCHETYPE_SLOT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..*",
+                          "nodeId" : "at0036",
+                          "includes" : [ {
+                            "@type" : "ASSERTION",
+                            "stringExpression" : "archetype_id/value matches {/openEHR-EHR-CLUSTER\\.organisation\\.v1/}",
+                            "expression" : {
+                              "@type" : "BINARY_OPERATOR",
+                              "type" : "BOOLEAN",
+                              "operator" : "matches",
+                              "leftOperand" : {
+                                "@type" : "MODEL_REFERENCE",
+                                "type" : "STRING",
+                                "precedenceOverriden" : false,
+                                "referenceType" : "Attribute",
+                                "path" : "archetype_id/value"
+                              },
+                              "rightOperand" : {
+                                "@type" : "CONSTRAINT",
+                                "type" : "STRING",
+                                "precedenceOverriden" : false,
+                                "referenceType" : "Constraint",
+                                "item" : {
+                                  "@type" : "C_STRING",
+                                  "constraint" : [ "/openEHR-EHR-CLUSTER\\.organisation\\.v1/" ]
+                                }
+                              },
+                              "precedenceOverriden" : false
+                            },
+                            "variables" : [ ]
+                          } ],
+                          "excludes" : [ ],
+                          "closed" : false
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0035.3",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "ARCHETYPE_SLOT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..*",
+                      "nodeId" : "at0043",
+                      "includes" : [ {
+                        "@type" : "ASSERTION",
+                        "stringExpression" : "archetype_id/value matches {/.*/}",
+                        "expression" : {
+                          "@type" : "BINARY_OPERATOR",
+                          "type" : "BOOLEAN",
+                          "operator" : "matches",
+                          "leftOperand" : {
+                            "@type" : "MODEL_REFERENCE",
+                            "type" : "STRING",
+                            "precedenceOverriden" : false,
+                            "referenceType" : "Attribute",
+                            "path" : "archetype_id/value"
+                          },
+                          "rightOperand" : {
+                            "@type" : "CONSTRAINT",
+                            "type" : "STRING",
+                            "precedenceOverriden" : false,
+                            "referenceType" : "Constraint",
+                            "item" : {
+                              "@type" : "C_STRING",
+                              "constraint" : [ "/.*/" ]
+                            }
+                          },
+                          "precedenceOverriden" : false
+                        },
+                        "variables" : [ ]
+                      } ],
+                      "excludes" : [ ],
+                      "closed" : false
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "existence" : "0..1",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "occurrences" : "1..1",
+          "nodeId" : "at0007",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "existence" : "0..1",
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "0..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "ARCHETYPE_SLOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..*",
+              "nodeId" : "at0021",
+              "includes" : [ {
+                "@type" : "ASSERTION",
+                "stringExpression" : "archetype_id/value matches {/.*/}",
+                "expression" : {
+                  "@type" : "BINARY_OPERATOR",
+                  "type" : "BOOLEAN",
+                  "operator" : "matches",
+                  "leftOperand" : {
+                    "@type" : "MODEL_REFERENCE",
+                    "type" : "STRING",
+                    "precedenceOverriden" : false,
+                    "referenceType" : "Attribute",
+                    "path" : "archetype_id/value"
+                  },
+                  "rightOperand" : {
+                    "@type" : "CONSTRAINT",
+                    "type" : "STRING",
+                    "precedenceOverriden" : false,
+                    "referenceType" : "Constraint",
+                    "item" : {
+                      "@type" : "C_STRING",
+                      "constraint" : [ "/.*/" ]
+                    }
+                  },
+                  "precedenceOverriden" : false
+                },
+                "variables" : [ ]
+              } ],
+              "excludes" : [ ],
+              "closed" : false
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "History",
+            "description" : "@ internal @"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Any event",
+            "description" : "Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time."
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Tree",
+            "description" : "@ internal @"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Management name",
+            "description" : "Name of a specific management or treatment activity or grouping of management or treatment activities.",
+            "comment" : "For example: \r\nAdmitted to hospital; Admitted to ICU; Use of compression stockings; Daily dressings; ECMO.\r\nCoding of the 'Management name' with a terminology is preferred, where possible."
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Specific management?",
+            "description" : "Is there a history of the specific management or treatment activity?",
+            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Item tree",
+            "description" : "@ internal @"
+          },
+          "at0021" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0021",
+            "text" : "Extension",
+            "description" : "Additional information required to extend the model with local content or to align with other reference models or formalisms.",
+            "comment" : "For example: local information requirements; or additional metadata to align with FHIR."
+          },
+          "at0022" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022",
+            "text" : "Management activity",
+            "description" : "Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose."
+          },
+          "at0023" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0023",
+            "text" : "Yes",
+            "description" : ""
+          },
+          "at0024" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024",
+            "text" : "No",
+            "description" : ""
+          },
+          "at0027" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0027",
+            "text" : "Unknown",
+            "description" : ""
+          },
+          "at0034" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0034",
+            "text" : "Screening purpose",
+            "description" : "The context or reason for screening.",
+            "comment" : "This data element is intended to provide collection context for the question/answer groups when queried at a later date. It is not expected that this data element will be exposed to the individual, but only stored in data.\r\nFor example: pre-admission screening or the name of the actual questionnaire."
+          },
+          "at0035" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035",
+            "text" : "Comment",
+            "description" : "Additional narrative about a specific management or treatment question, not captured in other fields."
+          },
+          "at0036" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0036",
+            "text" : "Additional details",
+            "description" : "Structured details or questions about the specific management or treatment activity.",
+            "comment" : "For example: hospital where treated."
+          },
+          "at0037" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037",
+            "text" : "Timing",
+            "description" : "Indication of timing related to the management activity.",
+            "comment" : "The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year."
+          },
+          "at0039" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0039",
+            "text" : "Any management?",
+            "description" : "Is there a history of management or treatment activities relevant for the screening purpose?",
+            "comment" : "The management or treatment may have been completed or could be ongoing.\r\n\r\nIn a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
+          },
+          "at0040" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0040",
+            "text" : "Yes",
+            "description" : ""
+          },
+          "at0041" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0041",
+            "text" : "No",
+            "description" : ""
+          },
+          "at0042" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0042",
+            "text" : "Unknown",
+            "description" : ""
+          },
+          "at0043" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0043",
+            "text" : "Additional details",
+            "description" : "Structured details or questions about screening for management or treatment."
+          },
+          "at0044" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0044",
+            "text" : "Description",
+            "description" : "Narrative description about the history of any management or treatment activities relevant for the screening purpose."
+          },
+          "at0045" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0045",
+            "text" : "Unsure",
+            "description" : ""
+          },
+          "at0046" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0046",
+            "text" : "Unsure",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Management screening questionnaire",
+            "description" : "Series of questions and associated answers used to screen for clinical management including, but not limited to treatments, therapies and hospitalisation.",
+            "comment" : "The answers may be self-reported."
+          },
+          "at0039.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0039.1",
+            "text" : "Any management?",
+            "description" : "Is there a history of management or treatment activities relevant for the screening purpose?",
+            "comment" : "The management or treatment may have been completed or could be ongoing.\r\n\r\nIn a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
+          },
+          "ac0.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.4",
+            "description" : ""
+          },
+          "at0044.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0044.1",
+            "text" : "Description",
+            "description" : "Narrative description about the history of any management or treatment activities relevant for the screening purpose."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Management name",
+            "description" : "Name of a specific management or treatment activity or grouping of management or treatment activities.",
+            "comment" : "For example: \r\nAdmitted to hospital; Admitted to ICU; Use of compression stockings; Daily dressings; ECMO.\r\nCoding of the 'Management name' with a terminology is preferred, where possible."
+          },
+          "at0022.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "Management activity",
+            "description" : "Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose."
+          },
+          "at0022.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "Management activity (2)",
+            "description" : "Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose."
+          },
+          "at0004.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Management name",
+            "description" : "Name of a specific management or treatment activity or grouping of management or treatment activities.",
+            "comment" : "For example: \r\nAdmitted to hospital; Admitted to ICU; Use of compression stockings; Daily dressings; ECMO.\r\nCoding of the 'Management name' with a terminology is preferred, where possible."
+          },
+          "at0005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.1",
+            "text" : "Specific management?",
+            "description" : "Is there a history of the specific management or treatment activity?",
+            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
+          },
+          "at0037.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.1",
+            "text" : "Timing",
+            "description" : "Indication of timing related to the management activity.",
+            "comment" : "The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year."
+          },
+          "at0035.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.1",
+            "text" : "Comment",
+            "description" : "Additional narrative about a specific management or treatment question, not captured in other fields."
+          },
+          "at0022.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "Management activity (3)",
+            "description" : "Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose."
+          },
+          "at0004.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Management name",
+            "description" : "Name of a specific management or treatment activity or grouping of management or treatment activities.",
+            "comment" : "For example: \r\nAdmitted to hospital; Admitted to ICU; Use of compression stockings; Daily dressings; ECMO.\r\nCoding of the 'Management name' with a terminology is preferred, where possible."
+          },
+          "at0022.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "Management activity (4)",
+            "description" : "Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose."
+          },
+          "at0004.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Management name",
+            "description" : "Name of a specific management or treatment activity or grouping of management or treatment activities.",
+            "comment" : "For example: \r\nAdmitted to hospital; Admitted to ICU; Use of compression stockings; Daily dressings; ECMO.\r\nCoding of the 'Management name' with a terminology is preferred, where possible."
+          },
+          "at0005.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.2",
+            "text" : "Specific management?",
+            "description" : "Is there a history of the specific management or treatment activity?",
+            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
+          },
+          "at0005.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.3",
+            "text" : "Specific management?",
+            "description" : "Is there a history of the specific management or treatment activity?",
+            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
+          },
+          "at0037.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.2",
+            "text" : "Timing",
+            "description" : "Indication of timing related to the management activity.",
+            "comment" : "The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year."
+          },
+          "at0037.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.3",
+            "text" : "Timing",
+            "description" : "Indication of timing related to the management activity.",
+            "comment" : "The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year."
+          },
+          "at0035.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.2",
+            "text" : "Comment",
+            "description" : "Additional narrative about a specific management or treatment question, not captured in other fields."
+          },
+          "at0005.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.4",
+            "text" : "Specific management?",
+            "description" : "Is there a history of the specific management or treatment activity?",
+            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
+          },
+          "at0037.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.4",
+            "text" : "Timing",
+            "description" : "Indication of timing related to the management activity.",
+            "comment" : "The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year."
+          },
+          "at0035.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.3",
+            "text" : "Comment",
+            "description" : "Additional narrative about a specific management or treatment question, not captured in other fields."
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002.1",
+            "text" : "Any event",
+            "description" : "Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time."
+          }
+        },
+        "nb" : {
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "History",
+            "description" : "@ internal @"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Uspesifisert hendelse",
+            "description" : "Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i et templat eller i en applikasjon."
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Tree",
+            "description" : "@ internal @"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Navn på sykdomshåndtering",
+            "description" : "Navn på en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter.",
+            "comment" : "For eksempel: \r\n- Innlagt på sykehus\r\n- Innlagt på intensivavdeling\r\n- Bruk av kompresjonstrømper\r\n- Daglige sårskift\r\n- ECMO\r\n\r\nKoding av \"Navn på sykdomshåndtering/behandling\" med en terminologi foretrekkes, der det er mulig."
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Spesifikk sykdomshåndtering?",
+            "description" : "Er det historikk av den spesifikke sykdomshåndterings- eller behandlingsaktiviteten?",
+            "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Item tree",
+            "description" : "@ internal @"
+          },
+          "at0021" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0021",
+            "text" : "Tilleggsinformasjon",
+            "description" : "Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.",
+            "comment" : "For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR."
+          },
+          "at0022" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022",
+            "text" : "Sykdomshåndteringsaktivitet",
+            "description" : "Detaljer om en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter som er innenfor kartleggingsformålet."
+          },
+          "at0023" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0023",
+            "text" : "Ja",
+            "description" : ""
+          },
+          "at0024" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024",
+            "text" : "Nei",
+            "description" : ""
+          },
+          "at0027" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0027",
+            "text" : "Ukjent",
+            "description" : ""
+          },
+          "at0034" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0034",
+            "text" : "Kartleggingsformål",
+            "description" : "Konteksten eller årsaken for kartleggingen.",
+            "comment" : "Dette dataelementet er ment for å sette en kontekst for spørsmålene, dersom man senere ønsker å gjøre spørringer på dataene. Det er ikke forventet at dette dataelementet skal være synlig for en bruker av skjemaet, men kun tilgjengelig i de lagrede dataene. For eksempel: \"Preoperativ screening\" eller navnet på det faktiske spørreskjemaet."
+          },
+          "at0035" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035",
+            "text" : "Kommentar",
+            "description" : "Ytterligere fritekst om spesifikk sykdomshåndterings- eller behandlingsspørsmålet som ikke er omfattet av andre felt."
+          },
+          "at0036" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0036",
+            "text" : "Ytterligere detaljer",
+            "description" : "Strukturerte detaljer eller spørsmål om den spesifikke sykdomshåndteringen eller behandlingen.",
+            "comment" : "For eksempel: Behandlingsinstitusjon."
+          },
+          "at0037" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037",
+            "text" : "Tidsangivelse",
+            "description" : "Tidsangivelse for sykdomshåndteringen.",
+            "comment" : "Dataelementet \"Tidsangivelse\" er med hensikt løst modellert for å støtte ulike måter å angi tidsangivelser for prosedyrer i et spørreskjema. Den konkrete semantikken defineres i templatet. For eksempel: Prosedyrens faktiske dato og/eller klokkeslett, start- og slutttid for prosedyren, et tidsintervall for når prosedyren ble gjort, varigheten av prosedyren, individets alder på tidspunktet for prosedyren, eller hvor lenge det siden den ble gjort. Kan være en deldato, for eksempel bare år, ved å bruke datatypen DV_DATE_TIME."
+          },
+          "at0039" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0039",
+            "text" : "Sykdomshåndtering?",
+            "description" : "Er det historikk av noen tidligere sykdomshåndterings- eller behandlingsaktiviteter som er innenfor kartleggingsformålet?",
+            "comment" : "Sykdomshåndtering eller behandling kan være fullført, eller pågående. Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
+          },
+          "at0040" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0040",
+            "text" : "Ja",
+            "description" : ""
+          },
+          "at0041" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0041",
+            "text" : "Nei",
+            "description" : ""
+          },
+          "at0042" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0042",
+            "text" : "Ukjent",
+            "description" : ""
+          },
+          "at0043" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0043",
+            "text" : "Ytterligere detaljer",
+            "description" : "Strukturerte detaljer eller spørsmål om kartleggingen av sykdomshåndterings- eller behandlingsaktiviteter."
+          },
+          "at0044" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0044",
+            "text" : "Beskrivelse",
+            "description" : "Fritekstbeskrivelse om tidligere sykdomshåndterings- eller behandlingsaktiviteter som er innenfor kartleggingsformålet.\r\n"
+          },
+          "at0045" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0045",
+            "text" : "Usikker",
+            "description" : ""
+          },
+          "at0046" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0046",
+            "text" : "Usikker",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Kartleggingsspørsmål om sykdomshåndtering",
+            "description" : "Spørsmål og tilhørende svar som brukes til å kartlegge sykdomshåndtering, inkludert men er ikke begrenset til behandlinger, terapier, sykehusinnleggelser.",
+            "comment" : "Svarene kan være selvrapporterte."
+          },
+          "at0039.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0039.1",
+            "text" : "Videre kreftbehandling?",
+            "description" : "Er det historikk av noen tidligere sykdomshåndterings- eller behandlingsaktiviteter som er innenfor kartleggingsformålet?",
+            "comment" : "Sykdomshåndtering eller behandling kan være fullført, eller pågående. Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
+          },
+          "ac0.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.4",
+            "description" : ""
+          },
+          "at0044.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0044.1",
+            "text" : "Beskrivelse",
+            "description" : "Fritekstbeskrivelse om tidligere sykdomshåndterings- eller behandlingsaktiviteter som er innenfor kartleggingsformålet.\r\n"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Navn på sykdomshåndtering",
+            "description" : "Navn på en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter.",
+            "comment" : "For eksempel: \r\n- Innlagt på sykehus\r\n- Innlagt på intensivavdeling\r\n- Bruk av kompresjonstrømper\r\n- Daglige sårskift\r\n- ECMO\r\n\r\nKoding av \"Navn på sykdomshåndtering/behandling\" med en terminologi foretrekkes, der det er mulig."
+          },
+          "at0022.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "Sykdomshåndteringsaktivitet",
+            "description" : "Detaljer om en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter som er innenfor kartleggingsformålet."
+          },
+          "at0022.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.2",
+            "text" : "Sykdomshåndteringsaktivitet (2)",
+            "description" : "Detaljer om en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter som er innenfor kartleggingsformålet."
+          },
+          "at0004.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Navn på sykdomshåndtering",
+            "description" : "Navn på en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter.",
+            "comment" : "For eksempel: \r\n- Innlagt på sykehus\r\n- Innlagt på intensivavdeling\r\n- Bruk av kompresjonstrømper\r\n- Daglige sårskift\r\n- ECMO\r\n\r\nKoding av \"Navn på sykdomshåndtering/behandling\" med en terminologi foretrekkes, der det er mulig."
+          },
+          "at0005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.1",
+            "text" : "Ingen videre behandling grunnet komorbidiet",
+            "description" : "Er det historikk av den spesifikke sykdomshåndterings- eller behandlingsaktiviteten?",
+            "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
+          },
+          "at0037.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.1",
+            "text" : "Tidsangivelse",
+            "description" : "Tidsangivelse for sykdomshåndteringen.",
+            "comment" : "Dataelementet \"Tidsangivelse\" er med hensikt løst modellert for å støtte ulike måter å angi tidsangivelser for prosedyrer i et spørreskjema. Den konkrete semantikken defineres i templatet. For eksempel: Prosedyrens faktiske dato og/eller klokkeslett, start- og slutttid for prosedyren, et tidsintervall for når prosedyren ble gjort, varigheten av prosedyren, individets alder på tidspunktet for prosedyren, eller hvor lenge det siden den ble gjort. Kan være en deldato, for eksempel bare år, ved å bruke datatypen DV_DATE_TIME."
+          },
+          "at0035.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.1",
+            "text" : "Kommentar",
+            "description" : "Ytterligere fritekst om spesifikk sykdomshåndterings- eller behandlingsspørsmålet som ikke er omfattet av andre felt."
+          },
+          "at0022.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.3",
+            "text" : "Sykdomshåndteringsaktivitet (3)",
+            "description" : "Detaljer om en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter som er innenfor kartleggingsformålet."
+          },
+          "at0004.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Navn på sykdomshåndtering",
+            "description" : "Navn på en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter.",
+            "comment" : "For eksempel: \r\n- Innlagt på sykehus\r\n- Innlagt på intensivavdeling\r\n- Bruk av kompresjonstrømper\r\n- Daglige sårskift\r\n- ECMO\r\n\r\nKoding av \"Navn på sykdomshåndtering/behandling\" med en terminologi foretrekkes, der det er mulig."
+          },
+          "at0022.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.4",
+            "text" : "Sykdomshåndteringsaktivitet (4)",
+            "description" : "Detaljer om en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter som er innenfor kartleggingsformålet."
+          },
+          "at0004.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Navn på sykdomshåndtering",
+            "description" : "Navn på en spesifikk sykdomshåndterings- eller behandlingsaktivitet eller gruppering av sykdomshåndterings- eller behandlingsaktiviteter.",
+            "comment" : "For eksempel: \r\n- Innlagt på sykehus\r\n- Innlagt på intensivavdeling\r\n- Bruk av kompresjonstrømper\r\n- Daglige sårskift\r\n- ECMO\r\n\r\nKoding av \"Navn på sykdomshåndtering/behandling\" med en terminologi foretrekkes, der det er mulig."
+          },
+          "at0005.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.2",
+            "text" : "Ingen videre behandling grunnet alder",
+            "description" : "Er det historikk av den spesifikke sykdomshåndterings- eller behandlingsaktiviteten?",
+            "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
+          },
+          "at0005.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.3",
+            "text" : "Ingen videre behandling grunnet pasientens eget ønske",
+            "description" : "Er det historikk av den spesifikke sykdomshåndterings- eller behandlingsaktiviteten?",
+            "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
+          },
+          "at0037.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.2",
+            "text" : "Tidsangivelse",
+            "description" : "Tidsangivelse for sykdomshåndteringen.",
+            "comment" : "Dataelementet \"Tidsangivelse\" er med hensikt løst modellert for å støtte ulike måter å angi tidsangivelser for prosedyrer i et spørreskjema. Den konkrete semantikken defineres i templatet. For eksempel: Prosedyrens faktiske dato og/eller klokkeslett, start- og slutttid for prosedyren, et tidsintervall for når prosedyren ble gjort, varigheten av prosedyren, individets alder på tidspunktet for prosedyren, eller hvor lenge det siden den ble gjort. Kan være en deldato, for eksempel bare år, ved å bruke datatypen DV_DATE_TIME."
+          },
+          "at0037.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.3",
+            "text" : "Tidsangivelse",
+            "description" : "Tidsangivelse for sykdomshåndteringen.",
+            "comment" : "Dataelementet \"Tidsangivelse\" er med hensikt løst modellert for å støtte ulike måter å angi tidsangivelser for prosedyrer i et spørreskjema. Den konkrete semantikken defineres i templatet. For eksempel: Prosedyrens faktiske dato og/eller klokkeslett, start- og slutttid for prosedyren, et tidsintervall for når prosedyren ble gjort, varigheten av prosedyren, individets alder på tidspunktet for prosedyren, eller hvor lenge det siden den ble gjort. Kan være en deldato, for eksempel bare år, ved å bruke datatypen DV_DATE_TIME."
+          },
+          "at0035.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.2",
+            "text" : "Kommentar",
+            "description" : "Ytterligere fritekst om spesifikk sykdomshåndterings- eller behandlingsspørsmålet som ikke er omfattet av andre felt."
+          },
+          "at0005.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.4",
+            "text" : "Spesifikk sykdomshåndtering?",
+            "description" : "Er det historikk av den spesifikke sykdomshåndterings- eller behandlingsaktiviteten?",
+            "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
+          },
+          "at0037.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.4",
+            "text" : "Tidsangivelse",
+            "description" : "Tidsangivelse for sykdomshåndteringen.",
+            "comment" : "Dataelementet \"Tidsangivelse\" er med hensikt løst modellert for å støtte ulike måter å angi tidsangivelser for prosedyrer i et spørreskjema. Den konkrete semantikken defineres i templatet. For eksempel: Prosedyrens faktiske dato og/eller klokkeslett, start- og slutttid for prosedyren, et tidsintervall for når prosedyren ble gjort, varigheten av prosedyren, individets alder på tidspunktet for prosedyren, eller hvor lenge det siden den ble gjort. Kan være en deldato, for eksempel bare år, ved å bruke datatypen DV_DATE_TIME."
+          },
+          "at0035.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.3",
+            "text" : "Spesifiser",
+            "description" : "Ytterligere fritekst om spesifikk sykdomshåndterings- eller behandlingsspørsmålet som ikke er omfattet av andre felt."
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002.1",
+            "text" : "Uspesifisert hendelse",
+            "description" : "Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i et templat eller i en applikasjon."
+          }
+        },
+        "de" : {
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "History",
+            "description" : "@ internal @"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Beliebiges Ereignis",
+            "description" : "Standardwert, ein undefinierter/s Zeitpunkt oder Intervallereignis, das explizit im Template oder zur Laufzeit der Anwendung definiert werden kann."
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Tree",
+            "description" : "@ internal @"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "Name der Aktivität",
+            "description" : "Name einer bestimmten Management- oder Behandlungsaktivität oder Gruppe von Management- oder Behandlungsaktivitäten.",
+            "comment" : "Zum Beispiel:\r\nIns Krankenhaus eingeliefert; Aufnahme auf die Intensivstation; Verwendung von Kompressionsstrümpfen; Tägliche Wundauflagen; ECMO.\r\nEine Codierung des „Name der Aktivität“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "Bestimmte Managementaktivität?",
+            "description" : "Gibt es eine Vorgeschichte der Durchführung einer bestimmten Management- oder Behandlungsaktivität?",
+            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypauswahl DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Item tree",
+            "description" : "@ internal @"
+          },
+          "at0021" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0021",
+            "text" : "Erweiterung",
+            "description" : "Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.",
+            "comment" : "Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle."
+          },
+          "at0022" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022",
+            "text" : "Managementaktivität",
+            "description" : "Details zu einer bestimmten Management- oder Behandlungsaktivität oder einer Reihe von Management- oder Behandlungstätigkeiten, die für das Screening relevant sind."
+          },
+          "at0023" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0023",
+            "text" : "Ja",
+            "description" : ""
+          },
+          "at0024" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024",
+            "text" : "Nein",
+            "description" : ""
+          },
+          "at0027" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0027",
+            "text" : "Unbekannt",
+            "description" : ""
+          },
+          "at0034" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0034",
+            "text" : "Zweck des Screenings",
+            "description" : "Der Grund für das gesamte Screening.",
+            "comment" : "Dieses Datenelement soll bei einer späteren Abfrage den Erhebungskontext für die Frage/Antwort-Gruppen bereitstellen. Es wird nicht erwartet, dass dieses Datenelement der Person belichtet wird, sondern nur in Daten gespeichert wird.\r\n\r\nZum Beispiel: Screening vor der Aufnahme oder der Name des eigentlichen Fragebogens oder Screening."
+          },
+          "at0035" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035",
+            "text" : "Kommentar",
+            "description" : "Zusätzliche Beschreibung über die spezifische Frage zur konkreten Management- oder Behandlungsaktivität, die nicht in anderen Bereichen erfasst wird."
+          },
+          "at0036" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0036",
+            "text" : "Zusätzliche Angaben",
+            "description" : "Strukturierte Angaben oder Fragen zur konkreten Management- oder Behandlungsaktivität.",
+            "comment" : "Zum Beispiel: Krankenhaus, wo behandelt wurde."
+          },
+          "at0037" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037",
+            "text" : "Zeitpunkt",
+            "description" : "Angabe des Zeitpunkts im Zusammenhang mit der Managementtätigkeit.",
+            "comment" : "Das Datenelement \"Zeitpunkt\" wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Managementaktivität verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter erläutert werden. Zum Beispiel: der tatsächliche Zeitpunkt oder das Intervall, in dem eine Aktivität stattgefunden hat; die Start- und Endzeit einer Aktivität; die Dauer der Aktivität; das Alter der Person zum Zeitpunkt der Aktivität; oder die Zeitspanne seit dem Auftreten der Aktivität. Ein Teildatum ist gültig, wenn der Datentyp DV_DATE_TIME verwendet wird, um nur ein Jahr aufzuzeichnen."
+          },
+          "at0039" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0039",
+            "text" : "Irgendwelche Managementaktivitäten?",
+            "description" : "Gibt es eine Vorgeschichte von Management- oder Behandlungsaktivitäten, die für das Screening relevant sind?",
+            "comment" : "Die Managementaktivität oder Behandlung kann abgeschlossen sein oder andauern.\r\n\r\nIn einem Template würde das Datenelement normalerweise in die spezifische gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypauswahl DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
+          },
+          "at0040" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0040",
+            "text" : "Ja",
+            "description" : ""
+          },
+          "at0041" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0041",
+            "text" : "Nein",
+            "description" : ""
+          },
+          "at0042" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0042",
+            "text" : "Unbekannt",
+            "description" : ""
+          },
+          "at0043" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0043",
+            "text" : "Zusätzliche Angaben",
+            "description" : "Strukturierte Angaben oder Fragen zum Screening für Managementaktivitäten oder Behandlung."
+          },
+          "at0044" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0044",
+            "text" : "Beschreibung",
+            "description" : "Beschreibung der Vorgeschichte aller Management- oder Behandlungsaktivitäten, die für das Screening relevant sind."
+          },
+          "at0045" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0045",
+            "text" : "Unsicher",
+            "description" : ""
+          },
+          "at0046" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0046",
+            "text" : "Unsicher",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Screening-Fragebogen zur Managementaktivitäten",
+            "description" : "Eine Reihe von Fragen und zugehörigen Antworten, die zum Screening für das klinische Management verwendet werden, einschließlich, aber nicht beschränkt auf Behandlungen, Therapien und Krankenhausaufenthalte.",
+            "comment" : "Die Antworten können selbst berichtet werden."
+          },
+          "at0039.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0039.1",
+            "text" : "Irgendwelche Managementaktivitäten?",
+            "description" : "Gibt es eine Vorgeschichte von Management- oder Behandlungsaktivitäten, die für das Screening relevant sind?",
+            "comment" : "Die Managementaktivität oder Behandlung kann abgeschlossen sein oder andauern.\r\n\r\nIn einem Template würde das Datenelement normalerweise in die spezifische gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypauswahl DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
+          },
+          "ac0.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.4",
+            "description" : ""
+          },
+          "at0044.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0044.1",
+            "text" : "Beschreibung",
+            "description" : "Beschreibung der Vorgeschichte aller Management- oder Behandlungsaktivitäten, die für das Screening relevant sind."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Name der Aktivität",
+            "description" : "Name einer bestimmten Management- oder Behandlungsaktivität oder Gruppe von Management- oder Behandlungsaktivitäten.",
+            "comment" : "Zum Beispiel:\r\nIns Krankenhaus eingeliefert; Aufnahme auf die Intensivstation; Verwendung von Kompressionsstrümpfen; Tägliche Wundauflagen; ECMO.\r\nEine Codierung des „Name der Aktivität“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
+          },
+          "at0022.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "Managementaktivität",
+            "description" : "Details zu einer bestimmten Management- oder Behandlungsaktivität oder einer Reihe von Management- oder Behandlungstätigkeiten, die für das Screening relevant sind."
+          },
+          "at0022.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "Managementaktivität (2)",
+            "description" : "Details zu einer bestimmten Management- oder Behandlungsaktivität oder einer Reihe von Management- oder Behandlungstätigkeiten, die für das Screening relevant sind."
+          },
+          "at0004.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Name der Aktivität",
+            "description" : "Name einer bestimmten Management- oder Behandlungsaktivität oder Gruppe von Management- oder Behandlungsaktivitäten.",
+            "comment" : "Zum Beispiel:\r\nIns Krankenhaus eingeliefert; Aufnahme auf die Intensivstation; Verwendung von Kompressionsstrümpfen; Tägliche Wundauflagen; ECMO.\r\nEine Codierung des „Name der Aktivität“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
+          },
+          "at0005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.1",
+            "text" : "Bestimmte Managementaktivität?",
+            "description" : "Gibt es eine Vorgeschichte der Durchführung einer bestimmten Management- oder Behandlungsaktivität?",
+            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypauswahl DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
+          },
+          "at0037.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.1",
+            "text" : "Zeitpunkt",
+            "description" : "Angabe des Zeitpunkts im Zusammenhang mit der Managementtätigkeit.",
+            "comment" : "Das Datenelement \"Zeitpunkt\" wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Managementaktivität verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter erläutert werden. Zum Beispiel: der tatsächliche Zeitpunkt oder das Intervall, in dem eine Aktivität stattgefunden hat; die Start- und Endzeit einer Aktivität; die Dauer der Aktivität; das Alter der Person zum Zeitpunkt der Aktivität; oder die Zeitspanne seit dem Auftreten der Aktivität. Ein Teildatum ist gültig, wenn der Datentyp DV_DATE_TIME verwendet wird, um nur ein Jahr aufzuzeichnen."
+          },
+          "at0035.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.1",
+            "text" : "Kommentar",
+            "description" : "Zusätzliche Beschreibung über die spezifische Frage zur konkreten Management- oder Behandlungsaktivität, die nicht in anderen Bereichen erfasst wird."
+          },
+          "at0022.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "Managementaktivität (3)",
+            "description" : "Details zu einer bestimmten Management- oder Behandlungsaktivität oder einer Reihe von Management- oder Behandlungstätigkeiten, die für das Screening relevant sind."
+          },
+          "at0004.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Name der Aktivität",
+            "description" : "Name einer bestimmten Management- oder Behandlungsaktivität oder Gruppe von Management- oder Behandlungsaktivitäten.",
+            "comment" : "Zum Beispiel:\r\nIns Krankenhaus eingeliefert; Aufnahme auf die Intensivstation; Verwendung von Kompressionsstrümpfen; Tägliche Wundauflagen; ECMO.\r\nEine Codierung des „Name der Aktivität“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
+          },
+          "at0022.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "Managementaktivität (4)",
+            "description" : "Details zu einer bestimmten Management- oder Behandlungsaktivität oder einer Reihe von Management- oder Behandlungstätigkeiten, die für das Screening relevant sind."
+          },
+          "at0004.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Name der Aktivität",
+            "description" : "Name einer bestimmten Management- oder Behandlungsaktivität oder Gruppe von Management- oder Behandlungsaktivitäten.",
+            "comment" : "Zum Beispiel:\r\nIns Krankenhaus eingeliefert; Aufnahme auf die Intensivstation; Verwendung von Kompressionsstrümpfen; Tägliche Wundauflagen; ECMO.\r\nEine Codierung des „Name der Aktivität“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
+          },
+          "at0005.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.2",
+            "text" : "Bestimmte Managementaktivität?",
+            "description" : "Gibt es eine Vorgeschichte der Durchführung einer bestimmten Management- oder Behandlungsaktivität?",
+            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypauswahl DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
+          },
+          "at0005.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.3",
+            "text" : "Bestimmte Managementaktivität?",
+            "description" : "Gibt es eine Vorgeschichte der Durchführung einer bestimmten Management- oder Behandlungsaktivität?",
+            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypauswahl DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
+          },
+          "at0037.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.2",
+            "text" : "Zeitpunkt",
+            "description" : "Angabe des Zeitpunkts im Zusammenhang mit der Managementtätigkeit.",
+            "comment" : "Das Datenelement \"Zeitpunkt\" wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Managementaktivität verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter erläutert werden. Zum Beispiel: der tatsächliche Zeitpunkt oder das Intervall, in dem eine Aktivität stattgefunden hat; die Start- und Endzeit einer Aktivität; die Dauer der Aktivität; das Alter der Person zum Zeitpunkt der Aktivität; oder die Zeitspanne seit dem Auftreten der Aktivität. Ein Teildatum ist gültig, wenn der Datentyp DV_DATE_TIME verwendet wird, um nur ein Jahr aufzuzeichnen."
+          },
+          "at0037.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.3",
+            "text" : "Zeitpunkt",
+            "description" : "Angabe des Zeitpunkts im Zusammenhang mit der Managementtätigkeit.",
+            "comment" : "Das Datenelement \"Zeitpunkt\" wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Managementaktivität verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter erläutert werden. Zum Beispiel: der tatsächliche Zeitpunkt oder das Intervall, in dem eine Aktivität stattgefunden hat; die Start- und Endzeit einer Aktivität; die Dauer der Aktivität; das Alter der Person zum Zeitpunkt der Aktivität; oder die Zeitspanne seit dem Auftreten der Aktivität. Ein Teildatum ist gültig, wenn der Datentyp DV_DATE_TIME verwendet wird, um nur ein Jahr aufzuzeichnen."
+          },
+          "at0035.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.2",
+            "text" : "Kommentar",
+            "description" : "Zusätzliche Beschreibung über die spezifische Frage zur konkreten Management- oder Behandlungsaktivität, die nicht in anderen Bereichen erfasst wird."
+          },
+          "at0005.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.4",
+            "text" : "Bestimmte Managementaktivität?",
+            "description" : "Gibt es eine Vorgeschichte der Durchführung einer bestimmten Management- oder Behandlungsaktivität?",
+            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypauswahl DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
+          },
+          "at0037.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.4",
+            "text" : "Zeitpunkt",
+            "description" : "Angabe des Zeitpunkts im Zusammenhang mit der Managementtätigkeit.",
+            "comment" : "Das Datenelement \"Zeitpunkt\" wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Managementaktivität verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter erläutert werden. Zum Beispiel: der tatsächliche Zeitpunkt oder das Intervall, in dem eine Aktivität stattgefunden hat; die Start- und Endzeit einer Aktivität; die Dauer der Aktivität; das Alter der Person zum Zeitpunkt der Aktivität; oder die Zeitspanne seit dem Auftreten der Aktivität. Ein Teildatum ist gültig, wenn der Datentyp DV_DATE_TIME verwendet wird, um nur ein Jahr aufzuzeichnen."
+          },
+          "at0035.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.3",
+            "text" : "Kommentar",
+            "description" : "Zusätzliche Beschreibung über die spezifische Frage zur konkreten Management- oder Behandlungsaktivität, die nicht in anderen Bereichen erfasst wird."
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002.1",
+            "text" : "Beliebiges Ereignis",
+            "description" : "Standardwert, ein undefinierter/s Zeitpunkt oder Intervallereignis, das explizit im Template oder zur Laufzeit der Anwendung definiert werden kann."
+          }
+        },
+        "it" : {
+          "at0001" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001",
+            "text" : "History",
+            "description" : "@ internal @"
+          },
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "Qualsiasi evento",
+            "description" : "Evento predefinito, non specificato nel tempo o nell'intervallo di tempo, che può essere definito esplicitamente in un modello o in fase di esecuzione. "
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "Tree",
+            "description" : "@ internal @"
+          },
+          "at0004" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004",
+            "text" : "*Management name (en)",
+            "description" : "*Name of a specific management or treatment or grouping of managements or treatments. (en)",
+            "comment" : "*Coding of the Management/treatment name with a terminology is preferred, where possible.\r\nFor example: \r\n- Admitted to hospital\r\n- Admitted to ICU\r\n- Use of compression stockings\r\n- Daily dressings\r\n- ECMO (en)"
+          },
+          "at0005" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005",
+            "text" : "*Specific management or treatment? (en)",
+            "description" : "*Is there a history of the specific management or treatment activit (en)",
+            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
+          },
+          "at0007" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0007",
+            "text" : "Item tree",
+            "description" : "@ internal @"
+          },
+          "at0021" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0021",
+            "text" : "Estensione",
+            "description" : "Informazioni aggiuntive necessarie per rilevare il contenuto locale o per allinearsi con altri modelli/formalismi di riferimento. ",
+            "comment" : "Ad esempio: requisiti informativi locali o metadati aggiuntivi per allinearsi agli equivalenti FHIR o CIMI. "
+          },
+          "at0022" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022",
+            "text" : "*Management activity (en)",
+            "description" : "*Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose. (en)"
+          },
+          "at0023" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0023",
+            "text" : "*Yes (en)",
+            "description" : ""
+          },
+          "at0024" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024",
+            "text" : "*No (en)",
+            "description" : ""
+          },
+          "at0027" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0027",
+            "text" : "Indeterminato",
+            "description" : ""
+          },
+          "at0034" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0034",
+            "text" : "Scopo dello screening",
+            "description" : "Il motivo di uno screening globale.",
+            "comment" : "*This data element is intended to provide collection context for the question/answer groups when queried at a later date. It is not expected that this data element will be exposed to the individual, but only stored in data. \r\n\r\nFor example: pre-admission screening or the name of the actual questionnaire. (en)"
+          },
+          "at0035" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035",
+            "text" : "Commento",
+            "description" : "*Additional narrative about a specific management or treatment activity or grouping of management or treatments activities, not captured in other fields. (en)"
+          },
+          "at0036" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0036",
+            "text" : "*Additional details (en)",
+            "description" : "*Structured details or questions about the specific management or treatment. (en)"
+          },
+          "at0037" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037",
+            "text" : "*Timing (en)",
+            "description" : "*Indication of timing related to the management activity. (en)",
+            "comment" : "*The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year. (en)"
+          },
+          "at0039" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0039",
+            "text" : "*Any management or treatment? (en)",
+            "description" : "*Is there a history of management or treatment activities relevant for the screening purpose? (en)",
+            "comment" : "*The management or treatment may have been completed or could be ongoing.\r\n\r\nIn a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
+          },
+          "at0040" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0040",
+            "text" : "*Yes (en)",
+            "description" : ""
+          },
+          "at0041" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0041",
+            "text" : "*No (en)",
+            "description" : ""
+          },
+          "at0042" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0042",
+            "text" : "Indeterminato",
+            "description" : ""
+          },
+          "at0043" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0043",
+            "text" : "*Additional details (en)",
+            "description" : "*Structured details or questions about screening for management or treatment. (en)"
+          },
+          "at0044" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0044",
+            "text" : "*Description (en)",
+            "description" : "*Narrative description about the history of any management or treatment activities relevant for the screening purpose. (en)"
+          },
+          "at0045" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0045",
+            "text" : "*Unsure (en)",
+            "description" : ""
+          },
+          "at0046" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0046",
+            "text" : "*Unsure (en)",
+            "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Management screening questionnaire (en)",
+            "description" : "*Series of questions and associated answers used to screen for clinical management including, but not limited to treatments, therapies and hospitalisation. (en)",
+            "comment" : "*The answers may be self-reported. (en)"
+          },
+          "at0039.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0039.1",
+            "text" : "*Any management or treatment? (en)",
+            "description" : "*Is there a history of management or treatment activities relevant for the screening purpose? (en)",
+            "comment" : "*The management or treatment may have been completed or could be ongoing.\r\n\r\nIn a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
+          },
+          "ac0.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.4",
+            "description" : ""
+          },
+          "at0044.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0044.1",
+            "text" : "*Description (en)",
+            "description" : "*Narrative description about the history of any management or treatment activities relevant for the screening purpose. (en)"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "*Management name (en)",
+            "description" : "*Name of a specific management or treatment or grouping of managements or treatments. (en)",
+            "comment" : "*Coding of the Management/treatment name with a terminology is preferred, where possible.\r\nFor example: \r\n- Admitted to hospital\r\n- Admitted to ICU\r\n- Use of compression stockings\r\n- Daily dressings\r\n- ECMO (en)"
+          },
+          "at0022.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "*Management activity (en)",
+            "description" : "*Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose. (en)"
+          },
+          "at0022.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "*Management activity (en) (2)",
+            "description" : "*Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose. (en)"
+          },
+          "at0004.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "*Management name (en)",
+            "description" : "*Name of a specific management or treatment or grouping of managements or treatments. (en)",
+            "comment" : "*Coding of the Management/treatment name with a terminology is preferred, where possible.\r\nFor example: \r\n- Admitted to hospital\r\n- Admitted to ICU\r\n- Use of compression stockings\r\n- Daily dressings\r\n- ECMO (en)"
+          },
+          "at0005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.1",
+            "text" : "*Specific management or treatment? (en)",
+            "description" : "*Is there a history of the specific management or treatment activit (en)",
+            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
+          },
+          "at0037.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.1",
+            "text" : "*Timing (en)",
+            "description" : "*Indication of timing related to the management activity. (en)",
+            "comment" : "*The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year. (en)"
+          },
+          "at0035.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.1",
+            "text" : "Commento",
+            "description" : "*Additional narrative about a specific management or treatment activity or grouping of management or treatments activities, not captured in other fields. (en)"
+          },
+          "at0022.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "*Management activity (en) (3)",
+            "description" : "*Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose. (en)"
+          },
+          "at0004.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "*Management name (en)",
+            "description" : "*Name of a specific management or treatment or grouping of managements or treatments. (en)",
+            "comment" : "*Coding of the Management/treatment name with a terminology is preferred, where possible.\r\nFor example: \r\n- Admitted to hospital\r\n- Admitted to ICU\r\n- Use of compression stockings\r\n- Daily dressings\r\n- ECMO (en)"
+          },
+          "at0022.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0022.1",
+            "text" : "*Management activity (en) (4)",
+            "description" : "*Details about a specific management or treatment activity or grouping of management or treatment activities relevant for the screening purpose. (en)"
+          },
+          "at0004.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "*Management name (en)",
+            "description" : "*Name of a specific management or treatment or grouping of managements or treatments. (en)",
+            "comment" : "*Coding of the Management/treatment name with a terminology is preferred, where possible.\r\nFor example: \r\n- Admitted to hospital\r\n- Admitted to ICU\r\n- Use of compression stockings\r\n- Daily dressings\r\n- ECMO (en)"
+          },
+          "at0005.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.2",
+            "text" : "*Specific management or treatment? (en)",
+            "description" : "*Is there a history of the specific management or treatment activit (en)",
+            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
+          },
+          "at0005.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.3",
+            "text" : "*Specific management or treatment? (en)",
+            "description" : "*Is there a history of the specific management or treatment activit (en)",
+            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
+          },
+          "at0037.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.2",
+            "text" : "*Timing (en)",
+            "description" : "*Indication of timing related to the management activity. (en)",
+            "comment" : "*The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year. (en)"
+          },
+          "at0037.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.3",
+            "text" : "*Timing (en)",
+            "description" : "*Indication of timing related to the management activity. (en)",
+            "comment" : "*The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year. (en)"
+          },
+          "at0035.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.2",
+            "text" : "Commento",
+            "description" : "*Additional narrative about a specific management or treatment activity or grouping of management or treatments activities, not captured in other fields. (en)"
+          },
+          "at0005.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0005.4",
+            "text" : "*Specific management or treatment? (en)",
+            "description" : "*Is there a history of the specific management or treatment activit (en)",
+            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
+          },
+          "at0037.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0037.4",
+            "text" : "*Timing (en)",
+            "description" : "*Indication of timing related to the management activity. (en)",
+            "comment" : "*The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when the management activity may have occurred. The specific and intended semantics can be further clarified in a template. For example: the actual point in time when, or interval during which, an activity took place; the start and stop time of an activity; the duration of the activity; the age of the individual at the time of the activity; or the duration of time since the activity occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year. (en)"
+          },
+          "at0035.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0035.3",
+            "text" : "Commento",
+            "description" : "*Additional narrative about a specific management or treatment activity or grouping of management or treatments activities, not captured in other fields. (en)"
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002.1",
+            "text" : "Qualsiasi evento",
+            "description" : "Evento predefinito, non specificato nel tempo o nell'intervallo di tempo, che può essere definito esplicitamente in un modello o in fase di esecuzione. "
+          }
+        }
+      },
+      "termBindings" : {
+        "SNOMED-CT" : {
+          "at0027" : "term:SNOMED-CT::261665006",
+          "at0023" : "term:SNOMED-CT::373066001",
+          "at0024" : "term:SNOMED-CT::373067005",
+          "at0040" : "term:SNOMED-CT::373066001",
+          "at0041" : "term:SNOMED-CT::373067005",
+          "at0042" : "term:SNOMED-CT::261665006"
+        }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : {
+        "ac0.1" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.1",
+          "members" : [ "at0040", "at0041", "at0042", "at0045" ]
+        },
+        "ac0.2" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.2",
+          "members" : [ "at0040", "at0041", "at0042", "at0045" ]
+        },
+        "ac0.3" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.3",
+          "members" : [ "at0040", "at0041", "at0042" ]
+        },
+        "ac0.4" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.4",
+          "members" : [ "at0040", "at0041" ]
+        },
+        "ac0.5" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.5",
+          "members" : [ "at0023", "at0024", "at0027", "at0046" ]
+        },
+        "ac0.6" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.6",
+          "members" : [ "at0023", "at0024", "at0027", "at0046" ]
+        },
+        "ac0.7" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.7",
+          "members" : [ "at0023", "at0024", "at0027", "at0046" ]
+        },
+        "ac0.8" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.8",
+          "members" : [ "at0023", "at0024", "at0027", "at0046" ]
+        }
+      }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "3960793d-07b0-4cff-b19b-1aa37e5cd08d",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch, Nina Schewe, Darin Leonhardt",
+        "organisation" : "Medizinische Hochschule Hannover, PLRI für medizinische Informatik/ Medizinische Hochschule",
+        "email" : "Strauch.Natalia@mh-hannover.de, nina.schewe@plri.de, leonhardt.darin@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Silje Ljosland Bakke, Marit Alice Venheim, John Tore Valand, Liv Laugen",
+        "organisation" : "Helse Vest IKT AS, Helse Bergen, ​Oslo University Hospital, Norway",
+        "email" : "silje.ljosland.bakke@helse-vest-ikt.no, marit.alice.venheim@helse-vest-ikt.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "it"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
+  } ],
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "nb"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ko"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "es-ar"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ar-sy"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  } ]
+}
