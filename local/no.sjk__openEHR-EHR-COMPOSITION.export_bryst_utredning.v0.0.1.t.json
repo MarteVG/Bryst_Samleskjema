@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "9.0.0",
+      "sem_ver" : "9.1.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "bc1b098d690f7a15b517a210dbab9fe0",
+      "MD5-CAM-1.0.1" : "2f814296accc86b36f5d2e5e4270bdbe",
       "PARENT:MD5-CAM-1.0.1" : "A60D0B7F52F1F9C3C9B3518DB83ACDAE"
     },
     "details" : {
@@ -321,7 +321,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "no.onk.samle.v1.0.0",
+          "text" : "Samleskjema_export_bryst_utredning",
           "description" : "Document to communicate information to others, commonly in response to a request from another party."
         }
       },
@@ -345,7 +345,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "no.onk.samle.v1.0.0",
+          "text" : "Samleskjema_export_bryst_utredning",
           "description" : "Dokument som brukes for å kommunisere informasjon til andre, ofte som svar på en forespørsel."
         }
       },
