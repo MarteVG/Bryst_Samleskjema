@@ -19,9 +19,9 @@
       "original_namespace" : "org.openehr",
       "original_publisher" : "openEHR Foundation",
       "custodian_namespace" : "org.openehr",
-      "MD5-CAM-1.0.1" : "62508deda6cbc1161173da1040d58075",
+      "MD5-CAM-1.0.1" : "b77f89342f68f578682afa4e77f05f42",
       "PARENT:MD5-CAM-1.0.1" : "9CA673C44D07EB44E7473631D0F97DD4",
-      "sem_ver" : "0.2.1",
+      "sem_ver" : "0.2.2",
       "build_uid" : ""
     },
     "details" : {
@@ -295,7 +295,7 @@
           "code" : "at0003.1",
           "text" : "Klinisk sikker kreft ved utredningstidspunktet?",
           "description" : "Uavhengig av cytologisk/histologisk prøvesvar, kan tilstanden basert på kliniske undersøkelser (inkludert bildediagnostikk og blodprøver) alene klassifiseres som sikker kreft. ",
-          "comment" : "Designkommentar:\nDenne er grunnlaget og skules i skjermbildet, skal alltid settes. \n\nDette er en kartlegging av om det er en klinisk evidens på kreft. \nSE om vi finner en snome-ct kode for dette eller bruke en lokal sjk kode. \n"
+          "comment" : "Designkommentar:\nDenne er grunnlaget og skules i skjermbildet, skal alltid settes. \n\nDette er en kartlegging av om det er en klinisk evidens på kreft. \nSE om vi finner en snome-ct kode for dette eller bruke en lokal sjk kode. \n\n 373796003 Cancer diagnosis based on investigations, without a tissue diagnosis (finding)"
         },
         "at0005.1" : {
           "@type" : "ARCHETYPE_TERM",
