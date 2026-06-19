@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "10.0.1",
+      "sem_ver" : "11.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "003e3be2882ba5f35dc46cedd99fc6ba",
+      "MD5-CAM-1.0.1" : "85e0dcfb4dcf7b84e320786208a94e66",
       "PARENT:MD5-CAM-1.0.1" : "A60D0B7F52F1F9C3C9B3518DB83ACDAE"
     },
     "details" : {
@@ -3858,10 +3858,23 @@
                               "rmTypeName" : "TERMINOLOGY_CODE",
                               "occurrences" : "1..1",
                               "terminologyId" : {
-                                "value" : "local"
+                                "value" : "local_terms"
                               },
-                              "constraint" : [ "ac0.15" ],
-                              "selectedTerminologies" : [ ]
+                              "constraint" : [ ],
+                              "selectedTerminologies" : [ "local_terms" ],
+                              "includedExternalTerminologyCodes" : [ {
+                                "terminologyId" : "local_terms",
+                                "code" : "373795004",
+                                "value" : "Ja"
+                              }, {
+                                "terminologyId" : "local_terms",
+                                "code" : "269497004",
+                                "value" : "Usikker benign/malign"
+                              }, {
+                                "terminologyId" : "local_terms",
+                                "code" : "109889007",
+                                "value" : "DCIS (duktalt carcinoma in situ) i mamma"
+                              } ]
                             } ]
                           } ],
                           "attributeTuples" : [ ]
@@ -3944,20 +3957,13 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
-        "en" : {
-          "ac0.15" : {
-            "@type" : "ARCHETYPE_TERM",
-            "text" : "(Synthesized)",
-            "code" : "ac0.15",
-            "description" : ""
-          }
-        },
+        "en" : { },
         "nb" : {
           "at0028.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0028.1",
             "text" : "Klinisk sikker kreft?",
-            "comment" : "Designkommentar: koden må endres til Ja.\n\n373796003 Cancer diagnosis based on investigations, without a tissue diagnosis (finding)",
+            "comment" : "Designkommentar: koden må endres til Ja.\n\n373795004 kreftdiagnose på grunnlag av kliniske funn (finding)\n269497004 tumor med usikkert eller ukjent malignitetspotensial i mamma (disorder)\n109889007 intraduktalt carcinoma in situ i mamma (disorder)",
             "description" : ""
           },
           "at0034.1" : {
@@ -3972,46 +3978,12 @@
             "code" : "at0004.1",
             "text" : "Problem/diagnosenavn",
             "description" : "Navnet på en bekymring, plage, problem eller diagnose, eller grupper av bekymringer, plager, problemer eller diagnoser."
-          },
-          "ac0.15" : {
-            "@type" : "ARCHETYPE_TERM",
-            "text" : "*(Synthesized) (en)",
-            "code" : "ac0.15",
-            "description" : ""
           }
         },
-        "de" : {
-          "ac0.15" : {
-            "@type" : "ARCHETYPE_TERM",
-            "text" : "*(Synthesized) (en)",
-            "code" : "ac0.15",
-            "description" : ""
-          }
-        },
-        "nl" : {
-          "ac0.15" : {
-            "@type" : "ARCHETYPE_TERM",
-            "text" : "*(Synthesized) (en)",
-            "code" : "ac0.15",
-            "description" : ""
-          }
-        },
-        "ca" : {
-          "ac0.15" : {
-            "@type" : "ARCHETYPE_TERM",
-            "text" : "*(Synthesized) (en)",
-            "code" : "ac0.15",
-            "description" : ""
-          }
-        },
-        "fr" : {
-          "ac0.15" : {
-            "@type" : "ARCHETYPE_TERM",
-            "text" : "*(Synthesized) (en)",
-            "code" : "ac0.15",
-            "description" : ""
-          }
-        }
+        "de" : { },
+        "nl" : { },
+        "ca" : { },
+        "fr" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -4085,6 +4057,21 @@
           "@type" : "VALUE_SET",
           "id" : "ac0.15",
           "members" : [ "at0031", "at0032" ]
+        },
+        "ac0.17" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.17",
+          "members" : [ "at0031", "at0032" ]
+        },
+        "ac0.18" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.18",
+          "members" : [ ]
+        },
+        "ac0.19" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.19",
+          "members" : [ ]
         }
       }
     },
