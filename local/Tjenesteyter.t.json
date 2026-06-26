@@ -1,0 +1,925 @@
+{
+  "@type" : "TEMPLATE",
+  "uid" : "05c63033-aaa7-4b38-ab86-4fd051ed9975",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2026-06-26"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "unmanaged"
+    },
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : { },
+    "otherDetails" : {
+      "licence" : "This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.",
+      "custodian_organisation" : "openEHR Foundation",
+      "original_namespace" : "org.openehr",
+      "original_publisher" : "openEHR Foundation",
+      "custodian_namespace" : "org.openehr",
+      "MD5-CAM-1.0.1" : "78b8812fc20919a3f29b1ef1e167de5f",
+      "PARENT:MD5-CAM-1.0.1" : "97F0D3BB6CACF9297BB434EDE9624022"
+    },
+    "details" : {
+      "de" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "de"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "sv" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "sv"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "nb" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "nb"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-CLUSTER.organisation.v1",
+  "differential" : false,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-CLUSTER.t_organisation.v1"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "CLUSTER",
+    "occurrences" : "1..1",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "items",
+      "existence" : "1..1",
+      "cardinality" : {
+        "@type" : "CARDINALITY",
+        "interval" : "1..*",
+        "ordered" : false,
+        "unique" : false
+      },
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..1",
+        "nodeId" : "at0001.1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "value",
+          "existence" : "0..1",
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "DV_CODED_TEXT",
+            "occurrences" : "1..1",
+            "attributes" : [ {
+              "@type" : "C_ATTRIBUTE",
+              "rmAttributeName" : "defining_code",
+              "children" : [ {
+                "@type" : "C_TERMINOLOGY_CODE",
+                "rmTypeName" : "TERMINOLOGY_CODE",
+                "occurrences" : "0..1",
+                "terminologyId" : {
+                  "value" : "U_LAB"
+                },
+                "constraint" : [ ],
+                "selectedTerminologies" : [ "U_LAB" ],
+                "includedExternalTerminologyCodes" : [ {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL001",
+                  "value" : "AHUS, Akershus universitetssykehus"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL002",
+                  "value" : "Fürst Patologi"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL003",
+                  "value" : "Gyn Lab A/S"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL004",
+                  "value" : "Gades Institutt, Haukeland universitetssjukehus"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL005",
+                  "value" : "Helse Fonna, Haugesund sjukehus"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL006",
+                  "value" : "Helse Førde, Førde sjukehus"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL007",
+                  "value" : "Helse Møre og Romsdal, Molde sjukehus"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL008",
+                  "value" : "Helse Sunnmøre, Ålesund sjukehus"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL009",
+                  "value" : "Nordlandssykehuset, Bodø"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL010",
+                  "value" : "Oslo universitetssykehus, Aker"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL011",
+                  "value" : "Oslo universitetssykehus, Radiumhospitalet"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL012",
+                  "value" : "Oslo universitetssykehus, Rikshospitalet"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL013",
+                  "value" : "Oslo universitetssykehus, Ullevål"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL014",
+                  "value" : "Stavanger universitetssjukehus"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL015",
+                  "value" : "St. Olavs Hospital"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL016",
+                  "value" : "Sykehuset Innlandet, Lillehammer"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL017",
+                  "value" : "Sykehuset i Telemark, Skien"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL018",
+                  "value" : "Sykehuset i Vestfold, Tønsberg"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL019",
+                  "value" : "Sykehuset Østfold, Kalnes"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL020",
+                  "value" : "Sørlandet sykehus, Arendal"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL021",
+                  "value" : "Sørlandet sykehus, Kristiansand"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL022",
+                  "value" : "UNN, Universitetssykehuset i Nord-Norge"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL023",
+                  "value" : "Vestre Viken HF, Sykehuset Buskerud, Drammen"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL024",
+                  "value" : "Annet laboratorium"
+                }, {
+                  "terminologyId" : "U_LAB",
+                  "code" : "UL025",
+                  "value" : "Ukjent"
+                } ]
+              } ]
+            } ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      }, {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..0",
+        "nodeId" : "at0003.1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "value",
+          "existence" : "0..1",
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "DV_IDENTIFIER",
+            "occurrences" : "1..1",
+            "defaultValue" : {
+              "@type" : "DV_IDENTIFIER"
+            },
+            "attributes" : [ ],
+            "attributeTuples" : [ ]
+          }, {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "DV_TEXT",
+            "occurrences" : "1..1",
+            "attributes" : [ ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      }, {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..0",
+        "nodeId" : "at0004.1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "value",
+          "existence" : "0..1",
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "DV_TEXT",
+            "occurrences" : "1..1",
+            "attributes" : [ ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      }, {
+        "@type" : "ARCHETYPE_SLOT",
+        "rmTypeName" : "CLUSTER",
+        "occurrences" : "0..*",
+        "nodeId" : "at0005",
+        "includes" : [ {
+          "@type" : "ASSERTION",
+          "stringExpression" : "archetype_id/value matches {/openEHR-EHR-CLUSTER\\.address(-[a-zA-Z0-9_]+)*\\.v1/}",
+          "expression" : {
+            "@type" : "BINARY_OPERATOR",
+            "type" : "BOOLEAN",
+            "operator" : "matches",
+            "leftOperand" : {
+              "@type" : "MODEL_REFERENCE",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Attribute",
+              "path" : "archetype_id/value"
+            },
+            "rightOperand" : {
+              "@type" : "CONSTRAINT",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Constraint",
+              "item" : {
+                "@type" : "C_STRING",
+                "constraint" : [ "/openEHR-EHR-CLUSTER\\.address(-[a-zA-Z0-9_]+)*\\.v1/" ]
+              }
+            },
+            "precedenceOverriden" : false
+          },
+          "variables" : [ ]
+        } ],
+        "excludes" : [ ],
+        "closed" : false
+      }, {
+        "@type" : "ARCHETYPE_SLOT",
+        "rmTypeName" : "CLUSTER",
+        "occurrences" : "0..*",
+        "nodeId" : "at0022",
+        "includes" : [ {
+          "@type" : "ASSERTION",
+          "stringExpression" : "archetype_id/value matches {/openEHR-EHR-CLUSTER\\.electronic_communication(-[a-zA-Z0-9_]+)*\\.v1/}",
+          "expression" : {
+            "@type" : "BINARY_OPERATOR",
+            "type" : "BOOLEAN",
+            "operator" : "matches",
+            "leftOperand" : {
+              "@type" : "MODEL_REFERENCE",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Attribute",
+              "path" : "archetype_id/value"
+            },
+            "rightOperand" : {
+              "@type" : "CONSTRAINT",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Constraint",
+              "item" : {
+                "@type" : "C_STRING",
+                "constraint" : [ "/openEHR-EHR-CLUSTER\\.electronic_communication(-[a-zA-Z0-9_]+)*\\.v1/" ]
+              }
+            },
+            "precedenceOverriden" : false
+          },
+          "variables" : [ ]
+        } ],
+        "excludes" : [ ],
+        "closed" : false
+      }, {
+        "@type" : "ARCHETYPE_SLOT",
+        "rmTypeName" : "CLUSTER",
+        "occurrences" : "0..*",
+        "nodeId" : "at0002",
+        "includes" : [ {
+          "@type" : "ASSERTION",
+          "stringExpression" : "archetype_id/value matches {/openEHR-EHR-CLUSTER\\.person(-[a-zA-Z0-9_]+)*\\.v1/}",
+          "expression" : {
+            "@type" : "BINARY_OPERATOR",
+            "type" : "BOOLEAN",
+            "operator" : "matches",
+            "leftOperand" : {
+              "@type" : "MODEL_REFERENCE",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Attribute",
+              "path" : "archetype_id/value"
+            },
+            "rightOperand" : {
+              "@type" : "CONSTRAINT",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Constraint",
+              "item" : {
+                "@type" : "C_STRING",
+                "constraint" : [ "/openEHR-EHR-CLUSTER\\.person(-[a-zA-Z0-9_]+)*\\.v1/" ]
+              }
+            },
+            "precedenceOverriden" : false
+          },
+          "variables" : [ ]
+        } ],
+        "excludes" : [ ],
+        "closed" : false
+      }, {
+        "@type" : "ARCHETYPE_SLOT",
+        "rmTypeName" : "CLUSTER",
+        "occurrences" : "0..*",
+        "nodeId" : "at0021",
+        "includes" : [ {
+          "@type" : "ASSERTION",
+          "stringExpression" : "archetype_id/value matches {/openEHR-EHR-CLUSTER\\.organisation(-[a-zA-Z0-9_]+)*\\.v1/}",
+          "expression" : {
+            "@type" : "BINARY_OPERATOR",
+            "type" : "BOOLEAN",
+            "operator" : "matches",
+            "leftOperand" : {
+              "@type" : "MODEL_REFERENCE",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Attribute",
+              "path" : "archetype_id/value"
+            },
+            "rightOperand" : {
+              "@type" : "CONSTRAINT",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Constraint",
+              "item" : {
+                "@type" : "C_STRING",
+                "constraint" : [ "/openEHR-EHR-CLUSTER\\.organisation(-[a-zA-Z0-9_]+)*\\.v1/" ]
+              }
+            },
+            "precedenceOverriden" : false
+          },
+          "variables" : [ ]
+        } ],
+        "excludes" : [ ],
+        "closed" : false
+      }, {
+        "@type" : "ARCHETYPE_SLOT",
+        "rmTypeName" : "CLUSTER",
+        "occurrences" : "0..*",
+        "nodeId" : "at0017",
+        "includes" : [ {
+          "@type" : "ASSERTION",
+          "stringExpression" : "archetype_id/value matches {/.*/}",
+          "expression" : {
+            "@type" : "BINARY_OPERATOR",
+            "type" : "BOOLEAN",
+            "operator" : "matches",
+            "leftOperand" : {
+              "@type" : "MODEL_REFERENCE",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Attribute",
+              "path" : "archetype_id/value"
+            },
+            "rightOperand" : {
+              "@type" : "CONSTRAINT",
+              "type" : "STRING",
+              "precedenceOverriden" : false,
+              "referenceType" : "Constraint",
+              "item" : {
+                "@type" : "C_STRING",
+                "constraint" : [ "/.*/" ]
+              }
+            },
+            "precedenceOverriden" : false
+          },
+          "variables" : [ ]
+        } ],
+        "excludes" : [ ],
+        "closed" : false
+      }, {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "ELEMENT",
+        "occurrences" : "0..0",
+        "nodeId" : "at0019.1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "value",
+          "existence" : "0..1",
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "DV_TEXT",
+            "occurrences" : "1..1",
+            "attributes" : [ ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "en" : {
+        "at0000" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "Organisation",
+          "description" : "An entity comprising one or more people and having a particular purpose.",
+          "comment" : "For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support."
+        },
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Name",
+          "description" : "The unstructured name or label for the organisation.",
+          "comment" : "For example: 'Royal Children's Hospital'; 'ABC District Nursing Service'; 'YNWA Oslo' or 'JB Smith Lawyers'."
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "Contact person",
+          "description" : "Details about one or more people within the organisation."
+        },
+        "at0003" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0003",
+          "text" : "Identifier",
+          "description" : "Identifier associated with the organisation.",
+          "comment" : "Occurrences for this data element is set to 0..* to allow for more than one Identifier to be recorded. Note that the ID data type contains multiple subcomponents for recording the ID value, type, issuer and assigner."
+        },
+        "at0004" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0004",
+          "text" : "Role",
+          "description" : "The relationship or role of the organisation to the individual or subject of care.",
+          "comment" : "For example: oncologist; palliative care home nursing service; or informal support network."
+        },
+        "at0005" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0005",
+          "text" : "Address",
+          "description" : "Details about an address for the organisation."
+        },
+        "at0017" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0017",
+          "text" : "Additional details",
+          "description" : "Additional details about the organisation."
+        },
+        "at0019" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0019",
+          "text" : "Comment",
+          "description" : "Additional narrative about the organisation not captured in other fields."
+        },
+        "at0021" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0021",
+          "text" : "Parent organisation",
+          "description" : "A larger organisation of which this organisation is a child or subsidiary."
+        },
+        "at0022" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0022",
+          "text" : "Electronic communication",
+          "description" : "Details about one or more types of electronic communication for the organisation."
+        },
+        "at0003.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0003",
+          "text" : "Identifier",
+          "description" : "Identifier associated with the organisation.",
+          "comment" : "Occurrences for this data element is set to 0..* to allow for more than one Identifier to be recorded. Note that the ID data type contains multiple subcomponents for recording the ID value, type, issuer and assigner."
+        },
+        "at0004.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0004",
+          "text" : "Role",
+          "description" : "The relationship or role of the organisation to the individual or subject of care.",
+          "comment" : "For example: oncologist; palliative care home nursing service; or informal support network."
+        },
+        "at0019.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0019",
+          "text" : "Comment",
+          "description" : "Additional narrative about the organisation not captured in other fields."
+        },
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "Organisation",
+          "description" : "An entity comprising one or more people and having a particular purpose.",
+          "comment" : "For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support."
+        },
+        "at0001.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Name",
+          "description" : "The unstructured name or label for the organisation.",
+          "comment" : "For example: 'Royal Children's Hospital'; 'ABC District Nursing Service'; 'YNWA Oslo' or 'JB Smith Lawyers'."
+        }
+      },
+      "nb" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Tjenesteyter",
+          "description" : "Tjenesteyter / utførende laboratorium av den diagnostiske prøven.",
+          "comment" : "For eksempel: Et firma, institusjon, selskap, forening, nettverk, avdeling, gruppe i nærmiljøet, forsikringsselskap, behandlingsteam eller en gruppe av naboer som opptrer som støtte."
+        },
+        "at0001.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001.1",
+          "text" : "Utførende laboratorie",
+          "description" : "Tjenesteyter / utførende laboratorium av den diagnostiske prøven.",
+          "comment" : "For eksempel: \"Haukeland Sykehus\", \"Årstad hjemmesykepleie\", \"YNWA Oslo\" eller \"JB Smith advokater\"."
+        },
+        "at0000" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "Organisasjon",
+          "description" : "En entitet som består av ett eller flere mennesker med et bestemt formål.",
+          "comment" : "For eksempel: Et firma, institusjon, selskap, forening, nettverk, avdeling, gruppe i nærmiljøet, forsikringsselskap, behandlingsteam eller en gruppe av naboer som opptrer som støtte."
+        },
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Navn",
+          "description" : "Ustrukturert navn for organisasjonen.",
+          "comment" : "For eksempel: \"Haukeland Sykehus\", \"Årstad hjemmesykepleie\", \"YNWA Oslo\" eller \"JB Smith advokater\"."
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "Kontaktperson",
+          "description" : "Detaljer om én eller flere personer i organisasjonen."
+        },
+        "at0003" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0003",
+          "text" : "Identifikator",
+          "description" : "Identifikator for organisasjonen.",
+          "comment" : "Forekomster for dette dataelementet er satt til 0..* for å tillate at mer enn én identifikator kan registreres. Merk at ID-datatypen inneholder flere underkomponenter for registrering av ID-verdi, type, utsteder og tilordnet."
+        },
+        "at0004" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0004",
+          "text" : "Rolle",
+          "description" : "Forholdet eller rollen organisasjonen har til individet som pasientjournalen omhandler.",
+          "comment" : "For eksempel: onkolog; palliativ hjemmetjeneste; eller uformelt støttenettverk."
+        },
+        "at0005" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0005",
+          "text" : "Adresse",
+          "description" : "Detaljer om organisasjonens adresse."
+        },
+        "at0017" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0017",
+          "text" : "Ytterligere detaljer",
+          "description" : "Ytterligere strukturerte detaljer om organisasjonen."
+        },
+        "at0019" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0019",
+          "text" : "Kommentar",
+          "description" : "Ytterligere fritekst om organisasjonen som ikke er registrert i andre felt."
+        },
+        "at0021" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0021",
+          "text" : "Overordnet organisasjon",
+          "description" : "En større organisasjon som denne organisasjonen er en del av."
+        },
+        "at0022" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0022",
+          "text" : "Elektronisk kommunikasjon",
+          "description" : "Detaljer om én eller flere former for elektronisk kommunikasjon med organisasjonen."
+        },
+        "at0003.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0003",
+          "text" : "Identifikator",
+          "description" : "Identifikator for organisasjonen.",
+          "comment" : "Forekomster for dette dataelementet er satt til 0..* for å tillate at mer enn én identifikator kan registreres. Merk at ID-datatypen inneholder flere underkomponenter for registrering av ID-verdi, type, utsteder og tilordnet."
+        },
+        "at0004.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0004",
+          "text" : "Rolle",
+          "description" : "Forholdet eller rollen organisasjonen har til individet som pasientjournalen omhandler.",
+          "comment" : "For eksempel: onkolog; palliativ hjemmetjeneste; eller uformelt støttenettverk."
+        },
+        "at0019.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0019",
+          "text" : "Kommentar",
+          "description" : "Ytterligere fritekst om organisasjonen som ikke er registrert i andre felt."
+        }
+      },
+      "de" : {
+        "at0000" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "Organisation",
+          "description" : "Eine Einheit, die aus einer oder mehreren Personen besteht und ein bestimmtes Ziel hat.",
+          "comment" : "Zum Beispiel: ein Unternehmen, eine Institution, ein Verband, ein Netzwerk, eine Abteilung, eine Gemeindegruppe, eine Gesundheitspraxisgruppe, ein Kostenträger/Versicherer, ein Pflegeteam oder eine Gruppe von Nachbarn, die Pflege oder Unterstützung leisten."
+        },
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Namenszeile",
+          "description" : "Der Name oder Bezeichnung der Organisation in unstrukturierter Form.",
+          "comment" : "Zum Beispiel: „Royal Children's Hospital“, \"ABC-Krankenpflegedienst\", „YNWA Oslo“ oder „JB Smith Rechtsanwälte“."
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "Kontaktperson",
+          "description" : "Details zu einer oder mehreren Personen innerhalb der Organisation."
+        },
+        "at0003" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0003",
+          "text" : "Identifier",
+          "description" : "Identifikator, der der identifizierten Organisation zugeordnet ist.",
+          "comment" : "Kardinalität für dieses Datenelement wird auf 0..* gesetzt, damit mehr als ein Identifikator aufgezeichnet werden kann. Beachten Sie, dass der ID-Datentyp mehrere Unterkomponenten zum Aufzeichnen des ID-Werts, -Typs, -Ausstellers und -Zuweisers enthält."
+        },
+        "at0004" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0004",
+          "text" : "Funktion",
+          "description" : "Die Beziehung oder Rolle der Organisation zum Pflegebedürftigen oder Patient.",
+          "comment" : "Zum Beispiel: Onkologe, ambulanter Palliativdienst oder informelles Supportnetzwerk."
+        },
+        "at0005" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0005",
+          "text" : "Adresse",
+          "description" : "Angaben zu einer Adresse der Organisation."
+        },
+        "at0017" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0017",
+          "text" : "Zusätzliche Details",
+          "description" : "Weitere Angaben zur Organisation."
+        },
+        "at0019" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0019",
+          "text" : "Kommentar",
+          "description" : "Zusätzlicher Text zu der Organisation, der in anderen Bereichen nicht erfasst wird."
+        },
+        "at0021" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0021",
+          "text" : "Muttergesellschaft",
+          "description" : "Eine größere Organisation, von der diese Organisation ein Sub- oder Tochterunternehmen ist."
+        },
+        "at0022" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0022",
+          "text" : "Elektronische Kommunikation",
+          "description" : "Details zu einer oder mehreren Arten der elektronischen Kommunikation für die Organisation."
+        },
+        "at0003.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0003",
+          "text" : "Identifier",
+          "description" : "Identifikator, der der identifizierten Organisation zugeordnet ist.",
+          "comment" : "Kardinalität für dieses Datenelement wird auf 0..* gesetzt, damit mehr als ein Identifikator aufgezeichnet werden kann. Beachten Sie, dass der ID-Datentyp mehrere Unterkomponenten zum Aufzeichnen des ID-Werts, -Typs, -Ausstellers und -Zuweisers enthält."
+        },
+        "at0004.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0004",
+          "text" : "Funktion",
+          "description" : "Die Beziehung oder Rolle der Organisation zum Pflegebedürftigen oder Patient.",
+          "comment" : "Zum Beispiel: Onkologe, ambulanter Palliativdienst oder informelles Supportnetzwerk."
+        },
+        "at0019.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0019",
+          "text" : "Kommentar",
+          "description" : "Zusätzlicher Text zu der Organisation, der in anderen Bereichen nicht erfasst wird."
+        },
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "Organisation",
+          "description" : "Eine Einheit, die aus einer oder mehreren Personen besteht und ein bestimmtes Ziel hat.",
+          "comment" : "Zum Beispiel: ein Unternehmen, eine Institution, ein Verband, ein Netzwerk, eine Abteilung, eine Gemeindegruppe, eine Gesundheitspraxisgruppe, ein Kostenträger/Versicherer, ein Pflegeteam oder eine Gruppe von Nachbarn, die Pflege oder Unterstützung leisten."
+        },
+        "at0001.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Namenszeile",
+          "description" : "Der Name oder Bezeichnung der Organisation in unstrukturierter Form.",
+          "comment" : "Zum Beispiel: „Royal Children's Hospital“, \"ABC-Krankenpflegedienst\", „YNWA Oslo“ oder „JB Smith Rechtsanwälte“."
+        }
+      },
+      "sv" : {
+        "at0003.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0003",
+          "text" : "Identifierare",
+          "description" : "Identifierare associerad med den identifierade organisationen.",
+          "comment" : "Förekomster (Occurrences) för detta dataelement är satt till 0..* för att tillåta att mer än en identifierare kan användas samtidigt. Observera att ID-datatypen innehåller flera underkomponenter för ID-värde, typ, utfärdare och tilldelare."
+        },
+        "at0004.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0004",
+          "text" : "Roll",
+          "description" : "Den roll eller kapacitet i vilken organisationen bidrar till vårdpersonens hälsa eller sociala vård.",
+          "comment" : "*For example: oncologist; palliative care home nursing service; or informal support network. (en)"
+        },
+        "at0019.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0019",
+          "text" : "Kommentar",
+          "description" : "Beskrivning av organisationen som inte kunnat anges i övriga fält."
+        },
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "Organisation",
+          "description" : "*An entity comprising one or more people and having a particular purpose. (en)",
+          "comment" : "*For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support. (en)"
+        },
+        "at0001.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Namn",
+          "description" : "Namnet som en organisation är känd för.",
+          "comment" : "Exempelvis: 'Royal Children's Hospital'; 'ABC District Nursing Service'; 'YNWA Oslo' or 'JB Smith Lawyers'."
+        },
+        "at0000" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000",
+          "text" : "Organisation",
+          "description" : "En organisatorisk entitet som består av en eller flera personer och som har ett särskilt syfte.",
+          "comment" : "Exempelvis företag, institution, förening, nätverk, avdelning, samhällsgrupp, vårdgivargrupp, försäkringstagare eller försäkringsgivare, vårdteam, eller grupp som ger vård eller stöd."
+        },
+        "at0001" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0001",
+          "text" : "Namn",
+          "description" : "Namnet som en organisation är känd under.",
+          "comment" : "Exempelvis Akademiska sjukhuset, Sahlgrenska universitetssjukhuset, YNWA Oslo, Karolinska universitetssjukhuset or JB Smith Lawyers."
+        },
+        "at0002" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002",
+          "text" : "Kontaktperson",
+          "description" : "Uppgifter om en eller flera kontaktpersoner inom organisationen."
+        },
+        "at0003" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0003",
+          "text" : "Identifierare",
+          "description" : "Identifierare associerad med organisationen.",
+          "comment" : "Förekomsten av identifierare är satt till 0..*, vilket innebär att mer en typ av identifierare kan användas. Observera att det finns möjlighet att använda underliggande id-komponenter som typ, utfärdare och tillståndsgivare."
+        },
+        "at0004" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0004",
+          "text" : "Roll",
+          "description" : "Organisationens relation till eller roll gentemot vårdtagaren.",
+          "comment" : "Exempelvis onkolog, palliativ hemsjukvård eller informell stödorganisation."
+        },
+        "at0005" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0005",
+          "text" : "Adress",
+          "description" : "Organisationens adressuppgifter."
+        },
+        "at0017" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0017",
+          "text" : "Ytterligare detaljer",
+          "description" : "Ytterligare uppgifter om organisationen."
+        },
+        "at0019" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0019",
+          "text" : "Kommentar",
+          "description" : "Kommentarer avseende organisationen som inte beskrivs i övriga datafält."
+        },
+        "at0021" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0021",
+          "text" : "Överordnad organisation",
+          "description" : "Den större organisation som denna organisation är en del i."
+        },
+        "at0022" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0022",
+          "text" : "Elektronisk kommunikation",
+          "description" : "Ett eller flera elektroniska kommunikationssätt som organisationen använder."
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "buildUid" : "38147ef7-f3af-386a-a9f5-a5788b80d11a",
+  "rmName" : "openehr",
+  "rmRelease" : "1.1.0",
+  "generated" : true,
+  "templateId" : "Tjenesteyter",
+  "otherMetaData" : { },
+  "templateOverlays" : [ ],
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "de"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "sv"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "nb"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  } ]
+}
