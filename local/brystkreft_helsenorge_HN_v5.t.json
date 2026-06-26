@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "125026e7ec5e673df71232fc2605779f",
+      "MD5-CAM-1.0.1" : "a5197b9553d134efe2e8e315350c4c14",
       "PARENT:MD5-CAM-1.0.1" : "BBA2C8A4A40921B9CD67FB733F13FBBF",
-      "sem_ver" : "6.0.0",
+      "sem_ver" : "7.0.0",
       "build_uid" : ""
     },
     "details" : {
@@ -2441,29 +2441,35 @@
                                   "rmTypeName" : "TERMINOLOGY_CODE",
                                   "occurrences" : "1..1",
                                   "terminologyId" : {
-                                    "value" : "SNOMED-CT_mens"
+                                    "value" : "SNOMED-CT"
                                   },
                                   "constraint" : [ ],
-                                  "selectedTerminologies" : [ "SNOMED-CT_mens" ],
+                                  "selectedTerminologies" : [ "SNOMED-CT" ],
                                   "includedExternalTerminologyCodes" : [ {
-                                    "terminologyId" : "SNOMED-CT_mens",
+                                    "terminologyId" : "SNOMED-CT",
                                     "code" : "302757007",
-                                    "value" : "Regelmessig"
+                                    "value" : "Regelmessig",
+                                    "translations" : {
+                                      "nb" : "Regelmessig menstruasjon"
+                                    }
                                   }, {
-                                    "terminologyId" : "SNOMED-CT_mens",
+                                    "terminologyId" : "SNOMED-CT",
                                     "code" : "80182007",
-                                    "value" : "Uregelmessig"
+                                    "value" : "Uregelmessig",
+                                    "translations" : {
+                                      "nb" : "Uregelmessig menstruasjon"
+                                    }
                                   }, {
-                                    "terminologyId" : "SNOMED-CT_mens",
+                                    "terminologyId" : "SNOMED-CT",
                                     "code" : "289903006",
                                     "value" : "Menopause",
                                     "translations" : {
-                                      "nb" : "Opphørt"
+                                      "nb" : "Opphørt/menopause"
                                     }
                                   }, {
-                                    "terminologyId" : "SNOMED-CT_mens",
-                                    "code" : "99",
-                                    "value" : "Vet ikke"
+                                    "terminologyId" : "SNOMED-CT",
+                                    "code" : "261665006",
+                                    "value" : "Ukjent"
                                   } ]
                                 } ]
                               } ],
@@ -2474,7 +2480,6 @@
                         }, {
                           "@type" : "C_COMPLEX_OBJECT",
                           "rmTypeName" : "ELEMENT",
-                          "occurrences" : "0..0",
                           "nodeId" : "at0040.1",
                           "attributes" : [ {
                             "@type" : "C_ATTRIBUTE",
@@ -2482,26 +2487,6 @@
                             "children" : [ {
                               "@type" : "C_COMPLEX_OBJECT",
                               "rmTypeName" : "DV_TEXT",
-                              "attributes" : [ ],
-                              "attributeTuples" : [ ]
-                            }, {
-                              "@type" : "C_COMPLEX_OBJECT",
-                              "rmTypeName" : "DV_INTERVAL<DV_DURATION>",
-                              "attributes" : [ ],
-                              "attributeTuples" : [ ]
-                            }, {
-                              "@type" : "C_COMPLEX_OBJECT",
-                              "rmTypeName" : "DV_DURATION",
-                              "attributes" : [ ],
-                              "attributeTuples" : [ ]
-                            }, {
-                              "@type" : "C_COMPLEX_OBJECT",
-                              "rmTypeName" : "DV_DATE_TIME",
-                              "attributes" : [ ],
-                              "attributeTuples" : [ ]
-                            }, {
-                              "@type" : "C_COMPLEX_OBJECT",
-                              "rmTypeName" : "DV_INTERVAL<DV_DATE_TIME>",
                               "attributes" : [ ],
                               "attributeTuples" : [ ]
                             } ]
@@ -2706,6 +2691,13 @@
             "text" : "*(Synthesized) (en)",
             "code" : "ac0.10",
             "description" : ""
+          },
+          "at0040.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0040.1",
+            "text" : "Alder ved menopause",
+            "description" : "Tidsangivelsen for bekymringen, plagen, problemet eller diagnosen.",
+            "comment" : "I skjema skal dette være tall, kun to siffer mulig"
           }
         },
         "de" : {
